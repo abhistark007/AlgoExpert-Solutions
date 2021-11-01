@@ -114,4 +114,31 @@ class Solution:
 ```
 ![1635782318073](https://user-images.githubusercontent.com/58290134/139701804-353bd7b5-34e8-4e89-9de1-98b04ef28c79.jpg)
 
-## 
+## Binary Tree Preorder Traversal
+* follows root->left->right
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+# preorder . root, left, right
+'''
+            --1
+           /     \
+         /         \
+     --2          --3
+    /     \      /     \
+ --4     --5  --6     --7                  
+'''
+# preorder traversal output [1,2,4,5,3,6,7]
+
+
+class Solution:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
+        if root is None:
+            return []
+        return [root.val] + preorderTraversal(root.left) preorderTraversal(root.right)
+```
